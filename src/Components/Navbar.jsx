@@ -8,7 +8,7 @@ const Navbar = () => {
             <ul className="list-none w-full z-10  w-full  flex p-4   flex-row gap-10  justify-end ">
              
                 <li>
-                   <Link to="Home"> Home</Link> 
+                   <Link to="/"> Home</Link> 
                    </li>
 <li ><Link to="Facilities">Facilities</Link></li>
 <li ><Link to="Rooms">Rooms</Link> </li>
