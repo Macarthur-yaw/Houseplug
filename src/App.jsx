@@ -4,7 +4,7 @@ import Contact from "./Pages/Contact-us"
 import Facilities from "./Pages/Facilities"
 import Homepage from "./Pages/Homepage"
 import Rooms from "./Pages/Rooms"
-import BackgroundPicture from "./assets/Background.jpg";
+// import BackgroundPicture from "./assets/Background.jpg";
 function App() {
 
   return (
