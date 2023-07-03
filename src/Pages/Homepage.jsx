@@ -1,6 +1,10 @@
-import Navbar from "../Components/Navbar";
+// import Navbar from "../Components/Navbar";
 import BackgroundPicture from "../assets/Background.jpg";
-import Pictures from "./Pictures";
+import {Pictures} from "./Pictures";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faTwitter,faInstagram,faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faGreaterThan,faLessThan } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../Components/Footer";
 
 const Homepage = () => {
     return (
@@ -24,22 +28,22 @@ alt="a background"/>
 <button className="border-2 border-orange-400 font-bold p-2 rounded w-56 text-l  bg-orange-400">BOOK NOW</button>   </div>
 </div>
         </div>
-        <div className="relative mt-95">
+        <div className="relative mt-95 pt-10 lg:mt-40">
 
-               <h1 className="text-l font-bold text-center text-blue-900"> All our room types including complementary breakfast.
-               </h1> <div className="flex  flex-col gap-2  border-2">   
+               <h1 className="text-l font-bold text-center text-blue-900 lg:text-xl"> All our room types including complementary breakfast.
+               </h1> <div className="flex  flex-col gap-2  shadow-sm">   
      {Pictures.map((picture, index) => {
   return (
     <div key={index} className="flex flex-row p-2   mx-auto">
 
-        <div className="flex flex-col text-left gap-2 text-blue-900 p-4">
-   <h1 className="text-l font-bold  p-2"> {picture.title}
+        <div className="flex flex-col lg:text-xl text-left gap-2 text-blue-900 p-4">
+   <h1 className="text-l font-bold lg:text-xl  p-2"> {picture.title}
    </h1>
   
     {picture.content}
 
     <br/>
-    <button className="border-2 w-32 p-1 border-orange-400 rounded bg-orange-400 text-white">Explore</button>
+    <button className="border-2 w-32 lg:w-56 p-1 border-orange-400 rounded bg-orange-400 text-white">Explore</button>
 </div>
     <img src={picture.img} alt="an " width="50%" height="50%"/>
     <br/>
@@ -55,41 +59,13 @@ alt="a background"/>
 <br/>
 
 Mr and Mrs Baxter, UK.
-
+<div className=" flex flex-row gap-2 items-center justify-center">
+<button className="border-2 p-1 w-8 bg-orange-200 rounded border-orange-200 text-white-80"><FontAwesomeIcon icon={faLessThan} /></button>
+<button className="border-2 p-1 w-8 bg-orange-200 rounded border-orange-200 text-white"><FontAwesomeIcon icon={faGreaterThan}/></button>
 </div>
-
-<div id="footer" className="flex  flex-row border-2 gap-6 p-4 items-center justify-between font-semibold text-white border-blue-900 p-2 bg-blue-900">
-        <div id="list1" className="flex flex-col gap-2 items-center">
-
-               <h1> HOSTELPLUG</h1>
-               407 Tarkwa Road,
-               +233 599 293 572
-               arthurkevin1260@gmail.com
-        </div>
-
-        <div id="list2" className="flex flex-col text-center items-center">
-                <ul>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Terms & Condition</li>
-                </ul>
-        </div>
-
-        <div id="list3" className="flex flex-col text-center items-center">
-        <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                </ul>
-
-        </div>
-
-        <div id="list4" className="flex flex-col items-center gap-2 ">
-                Subscribe to our newsletter
-
-         <span className="border-2 border-orange-300 flex  flex-row">       <input type="text" placeholder="Email address" className="border-none bg-transparent placeholder-white text-center"/>
-     <button className="bg-orange-300 text-center ">OK</button>
-     </span>     </div>
+</div>
+<div>
+<Footer/>
 </div>
         </div>
         </>    );
