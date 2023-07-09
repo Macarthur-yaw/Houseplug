@@ -50,4 +50,14 @@ export const Picture3=[
         content:"Two Bed room house"
     }
 ]
+
+export const Testimonials=[
+    {name:'Welbeck',
+content:'They have the very best of accomodations'
+},
+{
+    name:"MacArthur Kevin",
+    content:'Very cheap rooms for everyone'
+}
+]
 // export default Pictures,Pictures2;

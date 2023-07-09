@@ -5,9 +5,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faTwitter,faInstagram,faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faGreaterThan,faLessThan } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Components/Footer";
+import {  useEffect, useState } from "react";
+import { Testimonials } from "./Pictures";
 
 const Homepage = () => {
-    return (
+const[testimonials,setTestimonials]=useState([]);
+
+useEffect(()=>{
+setTestimonials([...Testimonials]);
+
+},[testimonials])
+  
+const newBlocks=testimonials.map((content,index)=>{
+
+  return (
+    <div key={index}>
+{content.name}
+{content.content}
+    </div>
+  )
+})
+
+const increaseSlides=()=>{
+// setTestimonials(prev=>prev+1);
+}
+const decreaseSlides=()=>{
+// testimonial-1;
+// setTestimonials(prev=>prev-1);
+}
+
+  return (
         
         <>
         <div>
@@ -55,13 +82,16 @@ alt="a background"/>
 </div>
 
 <div className="flex flex-col text-center p-2 text-blue-900" ><h1 className="text-blue-900 text-l font-bold">Testimonials</h1>
-&quot; Calm,Serene, Retro- What a way to relax and enjoy&quot;
+{/* &quot; Calm,Serene, Retro- What a way to relax and enjoy&quot;
 <br/>
 
-Mr and Mrs Baxter, UK.
+Mr and Mrs Baxter, UK. */}
+{/* Welcome */}
+{/* {testimonials} */}
+{newBlocks}
 <div className=" flex flex-row gap-2 items-center justify-center">
-<button className="border-2 p-1 w-8 bg-orange-200 rounded border-orange-200 text-white-80"><FontAwesomeIcon icon={faLessThan} /></button>
-<button className="border-2 p-1 w-8 bg-orange-200 rounded border-orange-200 text-white"><FontAwesomeIcon icon={faGreaterThan}/></button>
+<button onClick={decreaseSlides} className="border-2 p-1 w-8 bg-orange-200 rounded border-orange-200 text-white-80"><FontAwesomeIcon icon={faLessThan} /></button>
+<button onClick={increaseSlides} className="border-2 p-1 w-8 bg-orange-200 rounded border-orange-200 text-white"><FontAwesomeIcon icon={faGreaterThan}/></button>
 </div>
 </div>
 <div>
